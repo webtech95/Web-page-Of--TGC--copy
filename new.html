@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section id="Placement">
+        <div class="placement-carousal">
+            <h2>Our Placement Partners</h2>
+            <p>We work with some of the greatest companies in the industry to help
+                deliver our services around the world
+            </p>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-item"><img src="images/zee.png" alt=""></div>
+                    <div class="carousel-item"><img src="images/NDTV.png" alt=""></div>
+                    <div class="carousel-item"><img src="images/ia_200000160.png" alt=""></div>
+                    <div class="carousel-item"><img src="images/Webchutney.png" alt=""></div>
+                    <div class="carousel-item"><img src="images/ajtak.png" alt=""></div>
+                    <div class="carousel-item"><img src="images/yamaha.png" alt=""></div>
+                    <div class="carousel-item"><img src="images/jagran.png" alt=""></div>
+                    <div class="carousel-item"><img src="images/amarujala.png" alt=""></div>
+                    <div class="carousel-item"><img src="images/franchise india.png" alt=""></div>
+                    <div class="carousel-item"><img src="images/denik baskar.png" alt=""></div>
+                </div>
+                <div class="carousel-dots">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #Placement {
+            background-color: aqua;
+        }
+
+        .placement-carousal {
+            text-align: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .carousel {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: calc(100% * 10);
+            /* Adjust for total items */
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 100%;
+            /* Full width for better scaling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-item img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        @media (max-width: 480px) {
+            .carousel-track {
+                width: calc(100% * 10);
+                /* Ensures smooth sliding */
+            }
+
+            .carousel-item {
+                width: 50%;
+                /* Shows two items at a time */
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const track = document.querySelector(".carousel-track");
+            let index = 0;
+            const totalItems = document.querySelectorAll(".carousel-item").length;
+            const visibleItems = window.innerWidth <= 480 ? 2 : 3; // Show 2 items on mobile
+
+            function moveCarousel() {
+                index++;
+                if (index >= totalItems) {
+                    index = 0;
+                }
+                track.style.transform = `translateX(-${index * (100 / visibleItems)}%)`;
+            }
+
+            setInterval(moveCarousel, 2500); // Auto-slide every 2.5 seconds
+        });
+
+    </script>
+
+</body>
+
+</html>
