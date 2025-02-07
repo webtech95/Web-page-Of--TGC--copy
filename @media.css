@@ -677,9 +677,9 @@
         padding: 0 30px;
     }
 
-    .header-bg-image::before {
+    /* .header-bg-image::before {
         left: -360px;
-    }
+    } */
 
     /* Header- Containers */
 
