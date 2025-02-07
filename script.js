@@ -6,8 +6,6 @@ $(document).ready(function () {
   });
 });
 
-
-
 // Header Scroller
 
 document.addEventListener('scroll', () => {
