@@ -1,8 +1,11 @@
 // Slide Tonggle
 
-$(document).ready(function () {
-  $("#togglebtn").click(function () {
-    $(".navbar").slideToggle("slow");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById("togglebtn");
+  const navbar = document.querySelector(".navbar");
+
+  toggleBtn.addEventListener("click", () => {
+    navbar.classList.toggle("show");
   });
 });
 
@@ -10,6 +13,7 @@ $(document).ready(function () {
 
 document.addEventListener('scroll', () => {
   const header = document.querySelector('header');
+
 
   if (window.scrollY > 0) {
     header.classList.add('header-scroller');
